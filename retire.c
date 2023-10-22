@@ -17,9 +17,12 @@ int main(){
      scanf("%f",&annual_inflation); 
      printf("Enter the Retirement age:");
      scanf("%d",&year);
+     //year convert to month
      monthly=year*12;
      printf("|Month|\t|interast    |\t|Amount   |\n");
+     //find inflation and return rate
      adjust_inflation_return_rate=((1+annual_return)/(1+annual_inflation))-1;
+     //using for loop to find thr interest and total amount
      for(int i =1; i<=monthly; i++){
       interest=(initial_amount * adjust_inflation_return_rate)/12;
       initial_amount+=monthly_contribution_amount + interest;
@@ -27,6 +30,7 @@ int main(){
       printf("%d\t%f\t%f\n",monthly,interest,initial_amount);
 
      }
+     //output
      printf("Total earned interest = %f\n",total_interest_earned);
      printf("Total nest = %f \n",initial_amount);
     
