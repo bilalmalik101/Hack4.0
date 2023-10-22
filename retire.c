@@ -16,10 +16,16 @@ int main(){
      printf("Enter the inflation rate(scale 0,1):");
      scanf("%f",&annual_inflation); 
      monthly=year*12;
+     printf("|Month|\t|interast    |\t|Amount   |\n");
      adjust_inflation_return_rate=((1+annual_return)/(1+annual_inflation))-1;
      for(int i =1; i<=monthly; i++){
-    
+      interest=(initial_amount * adjust_inflation_return_rate)/2;
+      initial_amount+=monthly_contribution_amount + interest;
+      total_interest_earned+=interest;
+      printf("%d\t%f\t%f\n",monthly,interest,initial_amount);
+
      }
+    
 
 
 }
